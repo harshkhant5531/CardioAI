@@ -3,18 +3,18 @@ import numpy as np
 
 def run():
     try:
-        scaler = joblib.load('d:/cardio/scaler.joblib')
-        model = joblib.load('d:/cardio/model.joblib')
+        scaler = joblib.load('backend/scaler.joblib')
+        model = joblib.load('backend/model.joblib')
         
         input_healthy = {
             'gender': 1, 'height': 170, 'weight': 60, 
             'ap_hi': 110, 'ap_lo': 70, 
             'cholesterol': 1, 'gluc': 1, 
             'smoke': 0, 'alco': 0, 'active': 1, 
-            'age': 20, 'bmi': 60/((1.7)**2) # ~20.7
+            'age': 20, 'bmi': 60/((1.7)**2)
         }
 
-        with open('d:/cardio/backend/min_risk.txt', 'w') as f:
+        with open('backend/min_risk.txt', 'w') as f:
             def predict(data, label):
                 features = [
                     data['gender'], data['height'], data['weight'],
@@ -31,7 +31,7 @@ def run():
             predict(input_healthy, "Healthy Inputs")
             
     except Exception as e:
-         with open('d:/cardio/backend/min_risk.txt', 'w') as f:
+         with open('backend/min_risk.txt', 'w') as f:
             f.write(f"Error: {e}")
 
 if __name__ == "__main__":
