@@ -4,23 +4,47 @@ import pandas as pd
 import numpy as np
 import os
 
-MODEL_PATH = "backend\model.joblib"
-SCALER_PATH = "backend\scaler.joblib"
+# MODEL_PATH = "backend\model.joblib"
+# SCALER_PATH = "backend\scaler.joblib"
+
+# model = None
+# scaler = None
+
+# Absolute, OS-safe base directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_PATH = os.path.join(BASE_DIR, "model.joblib")
+SCALER_PATH = os.path.join(BASE_DIR, "scaler.joblib")
 
 model = None
 scaler = None
 
+# def load_model():
+#     global model, scaler
+#     try:
+#         if os.path.exists(MODEL_PATH) and os.path.exists(SCALER_PATH):
+#             model = joblib.load(MODEL_PATH)
+#             scaler = joblib.load(SCALER_PATH)
+#             print("Model and scaler loaded successfully.")
+#         else:
+#             print(f"Error: Model or scaler not found at {MODEL_PATH} or {SCALER_PATH}")
+#     except Exception as e:
+#         print(f"Error loading model: {e}")
+
 def load_model():
     global model, scaler
-    try:
-        if os.path.exists(MODEL_PATH) and os.path.exists(SCALER_PATH):
-            model = joblib.load(MODEL_PATH)
-            scaler = joblib.load(SCALER_PATH)
-            print("Model and scaler loaded successfully.")
-        else:
-            print(f"Error: Model or scaler not found at {MODEL_PATH} or {SCALER_PATH}")
-    except Exception as e:
-        print(f"Error loading model: {e}")
+
+    if not os.path.exists(MODEL_PATH):
+        raise FileNotFoundError(f"Model not found at {MODEL_PATH}")
+
+    if not os.path.exists(SCALER_PATH):
+        raise FileNotFoundError(f"Scaler not found at {SCALER_PATH}")
+
+    model = joblib.load(MODEL_PATH)
+    scaler = joblib.load(SCALER_PATH)
+
+    print("Model and scaler loaded successfully")
+
 
 def make_prediction(data: dict):
     if model is None or scaler is None:
