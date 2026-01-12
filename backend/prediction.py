@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 import os
 
-MODEL_PATH = "d:/cardio/model.joblib"
-SCALER_PATH = "d:/cardio/scaler.joblib"
+MODEL_PATH = "backend\model.joblib"
+SCALER_PATH = "backend\scaler.joblib"
 
 model = None
 scaler = None
