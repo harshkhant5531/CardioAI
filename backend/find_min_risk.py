@@ -6,8 +6,6 @@ def run():
         scaler = joblib.load('d:/cardio/scaler.joblib')
         model = joblib.load('d:/cardio/model.joblib')
         
-        # Healthy Input
-        # BP 110/70, Age 20, BMI 20, Chol 1, Gluc 1, Smoke 0, Alco 0
         input_healthy = {
             'gender': 1, 'height': 170, 'weight': 60, 
             'ap_hi': 110, 'ap_lo': 70, 
