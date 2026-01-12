@@ -26,6 +26,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def health():
+    return {"status": "CardioAI API is running"}
+
+
 @app.post("/predict", response_model=HealthCheckResponse)
 def predict_health(request: HealthCheckRequest):
     try:
