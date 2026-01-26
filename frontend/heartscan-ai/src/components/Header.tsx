@@ -34,6 +34,7 @@ export const Header = ({ onHomeClick }: HeaderProps) => {
             <Link to="/features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</Link>
             <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link>
             <Link to="/research" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Research</Link>
+            <Link to="/analysis" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Analysis</Link>
             <Link to="/faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">FAQ</Link>
             <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
               {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
@@ -67,6 +68,7 @@ export const Header = ({ onHomeClick }: HeaderProps) => {
             <Link to="/features" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">Features</Link>
             <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">About</Link>
             <Link to="/research" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">Research</Link>
+            <Link to="/analysis" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">Analysis</Link>
             <Link to="/faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">FAQ</Link>
             <Button variant="default" size="sm" className="mt-2" onClick={() => navigate('/#get-started')}>Get Started</Button>
           </nav>

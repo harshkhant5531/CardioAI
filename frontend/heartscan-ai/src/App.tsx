@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import Features from "./pages/Features";
 import About from "./pages/About";
 import Research from "./pages/Research";
+import Analysis from "./pages/Analysis";
 import FAQ from "./pages/FAQ";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/features" element={<Features />} />
             <Route path="/about" element={<About />} />
             <Route path="/research" element={<Research />} />
+            <Route path="/analysis" element={<Analysis />} />
             <Route path="/faq" element={<FAQ />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

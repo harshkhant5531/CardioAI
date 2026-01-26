@@ -12,10 +12,10 @@ export default function About() {
             <main className="relative z-10 pt-32 px-4 pb-20">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-16">
-                        <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 text-white">
+                        <h1 className="text-white font-display text-4xl md:text-6xl font-bold mb-6 text-foreground">
                             About <span className="gradient-text">CardioAI</span>
                         </h1>
-                        <p className="text-slate-300 max-w-2xl mx-auto text-lg">
+                        <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
                             Empowering individuals with AI-driven insights for better heart health.
                         </p>
                     </div>
